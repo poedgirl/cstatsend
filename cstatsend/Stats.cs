@@ -26,7 +26,7 @@ namespace cstatsend
                 DriveInfo[] di = DriveInfo.GetDrives();
                 DiskCollection dc = new DiskCollection();
 
-                foreach(DriveInfo i in di)
+                foreach(DriveInfo i in di.Where(d => d.IsReady))
                 {
                     Disk d = new Disk
                     {
